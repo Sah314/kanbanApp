@@ -7,7 +7,7 @@ interface Resizeableprops {
     children: any;
 }
 const Resizeable:React.FC<Resizeableprops>=({direction,children})=>{
-    return <ResizableBox height={120} width={300} resizeHandles={['s','sw','se']}>{children}</ResizableBox>;
+    return <ResizableBox height={120} width={285} resizeHandles={['s','sw','se']}>{children}</ResizableBox>;
 };
 
 export default Resizeable;
