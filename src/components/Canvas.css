@@ -1,27 +1,32 @@
 .dnd{
     display: grid;
-    background-color: #27374D;
+    background-color: #2C3333;
     width: 100%;
     height: 100%;
     grid-template-columns: repeat(auto-fill,300px);
     gap: .5rem;
 }
-
+.group-title{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-bottom: 2rem;
+}
 .group{
     border-radius: 7px;
- 
-    background-color:#526D82;
+    background-color:#395B64;
     margin-top: 4px;
     padding: 3px;
 }
 .item{
     border-radius: 6px;
     display: flex;
-    min-height:150px;
-    margin: 1rem;
     align-items: center;
-    background-color: aliceblue;
+    background-color: #E7F6F2;
     justify-content: center;
+    z-index: 100;
+}
+
+.item:not(:last-of-type){
+    margin-bottom: 5rem;
 }
 .item:hover{
 cursor:grab;
@@ -30,5 +35,7 @@ cursor:grab;
 .current-dnd-item{
     background-color: #526D82;
     color: #526D82;
-    /* ars above other elements  */
+}
+h1{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }

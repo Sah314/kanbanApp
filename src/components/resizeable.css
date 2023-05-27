@@ -1,0 +1,41 @@
+.react-resizable-handle {
+    display:block;
+    height: 0.01rem;
+    width: 98%;
+    background-color: rgb(158, 155, 155);
+    background-repeat: no-repeat;
+    cursor:s-resize; /* Set cursor style to indicate resize */
+
+     /* Set cursor style to indicate resize */
+    /* Add additional styling as per your requirements */
+  }
+
+  .react-resizable-handle:hover {
+background-color: blueviolet;
+}
+.react-resizeable-handle-s{
+    height: 15px;
+    width: 98%;
+        background-color: #ccc;
+        cursor:s-resize; /* Set cursor style to indicate resize */
+        /* Add additional styling as per your requirements */
+}
+.react-resizeable-handle-s:hover{
+    background-color: yellow;
+}
+.react-resizeable-handle-sw{
+    height: 15px;
+    width: 12%;
+        background-color: #ccc;
+        cursor:sw-resize; /* Set cursor style to indicate resize */
+        /* Add additional styling as per your requirements */
+} 
+.react-resizeable-handle-se{
+    height: 15px;
+    width: 12%;
+        background-color: #ccc;
+        cursor:se-resize; /* Set cursor style to indicate resize */
+        /* Add additional styling as per your requirements */
+}
+
+  

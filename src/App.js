@@ -1,9 +1,9 @@
 import './App.css';
-import Canvas from './components/Canva';
+import Canvas from './components/Canvas';
 function App() {
   const items=[
-    {title:"group1",item:["A","B","C"]},
-    {title:"group2",item:["D","E",]}
+    {title:"Group-1",item:["A","B","C"]},
+    {title:"Group-2",item:["D","E"]}
 ]
   return (
     <div className="App">

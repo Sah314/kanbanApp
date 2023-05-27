@@ -1,13 +1,13 @@
 import React from 'react';
 import {ResizableBox} from 'react-resizable'
-
+import "./resizeable.css"
 
 interface Resizeableprops {
     direction :string;
     children: any;
 }
 const Resizeable:React.FC<Resizeableprops>=({direction,children})=>{
-    return <ResizableBox height={300} width={300}>children</ResizableBox>;
+    return <ResizableBox height={120} width={300} resizeHandles={['s','sw','se']}>{children}</ResizableBox>;
 };
 
 export default Resizeable;
