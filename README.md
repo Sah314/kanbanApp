@@ -10,3 +10,4 @@ below images are part of the implementation of the project:
 ![image](https://github.com/Sah314/dragablecomponentsreact/assets/82277915/33f2a4cf-ffee-4fd9-8f58-713aa0725450)
 
 ![image](https://github.com/Sah314/dragablecomponentsreact/assets/82277915/85a5435c-b83d-4c27-af30-6e6dd58d2557)
+![image](https://github.com/Sah314/dragablecomponentsreact/assets/82277915/208b167b-c23c-4c25-b9bc-59fbf918c2c6)
