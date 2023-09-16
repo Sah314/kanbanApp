@@ -2,11 +2,7 @@ import React, { useLayoutEffect, useState, useRef, useEffect } from "react";
 import "./Canvas.css";
 import Resizable from "./Resizable";
 function Canvas({ items }) {
-    const [positiondetails,setpositionDetails]=useState([])
-  const [position, setPosition] = useState([]);
-    const [height,setHeight]=useState(0);
-    const [width,setWidth]=useState(0);
-  const [item, setItem] = useState("");
+    
   const [widgets, setWidgets] = useState(items);
   // const [numbers, setNumbers] = useState([]);
 
@@ -28,33 +24,29 @@ function Canvas({ items }) {
     }, 0);
   };
 
-  const logElementSizeandposition=()=>{
-console.log(positiondetails);
-
-  }
-  const handleelementposition = (e, params) => {
-    let X = e.clientX;
-    let Y = e.clientY;
-    const newPosition = { x: X, y: Y };
-    setpositionDetails((prevDetails) => ({
-      ...prevDetails,
-      [params]: newPosition,
-    }));
+  // const handleelementposition = (e, params) => {
+  //   let X = e.clientX;
+  //   let Y = e.clientY;
+  //   const newPosition = { x: X, y: Y };
+  //   setpositionDetails((prevDetails) => ({
+  //     ...prevDetails,
+  //     [params]: newPosition,
+  //   }));
     
-    let {clientHeight,clientWidth} = e.target;
+  //   let {clientHeight,clientWidth} = e.target;
     
-    setHeight(clientHeight);
-    setWidth(clientWidth);
-    //setDimensions({width:clientWidth,height:clientHeight})
-    console.log(clientHeight,clientWidth);
-    setItem(Object.values(params));
-    setPosition([X, Y]);
-    // console.log(X);
-    // console.log(Y);
-  };
+  //   setHeight(clientHeight);
+  //   setWidth(clientWidth);
+  //   //setDimensions({width:clientWidth,height:clientHeight})
+  //   console.log(clientHeight,clientWidth);
+  //   setItem(Object.values(params));
+  //   setPosition([X, Y]);
+  //   // console.log(X);
+  //   // console.log(Y);
+  // };
   const handleDragEnd = () => {
     // console.log("dragend...");
-    logElementSizeandposition();
+  
     setDragging(false);
     dragNode.current.removeEventListener("dragend", handleDragEnd);
     dragItem.current = null;
@@ -96,6 +88,8 @@ console.log(positiondetails);
     <div>
       <div className="dnd">
         {widgets.map((group, groupid) => (
+          <div className="groupcontainer">
+<h3 className="group-title">{group.title}</h3>
           <div
             key={group.title}
             className="group"
@@ -105,7 +99,7 @@ console.log(positiondetails);
                 : null
             }
           >
-            <div className="group-title">{group.title}</div>
+            
             {group.item.map((it, itid) => (
               <Resizable direction="vertical">
                 <div
@@ -113,7 +107,7 @@ console.log(positiondetails);
                   className={dragging ? getStyles({ groupid, itid }) : "item"}
                   key={it}
                   draggable
-                  onMouseOver={(e) => handleelementposition(e, { it })}
+                  // onMouseOver={(e) => handleelementposition(e, { it })}
                   onDragStart={(e) => handleDragStart(e, { groupid, itid })}
                   onDragEnter={
                     dragging
@@ -127,15 +121,11 @@ console.log(positiondetails);
               </Resizable>
             ))}
           </div>
+          </div>
+          
         ))}
       </div>
-      <div>
-        <h1>
-          The position of element {item} is : ({position[0]},{position[1]})
-        </h1>
-        <h1>Height of the element : {height} px</h1> 
-        <h1>Width of the Element: {width} px</h1> 
-      </div>
+      
 
       {/* <div className="group">
     
