@@ -1,15 +1,23 @@
-import './App.css';
-import Canvas from './components/Canvas';
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+ import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
+ import './App.css';
+ import Login from './components/Auth/login';
+ import Signup from './components/Auth/signup';
+ import Navbarkanban from './components/Navbar/navbar';
 function App() {
-  const items=[
-    {title:"Group-1",item:["A","B","C"]},
-    {title:"Group-2",item:["D","E"]},
-    {title:"Group-3",item:["D","E"]}
-]
+
+
   return (
-    <div className="App">
-    <Canvas items={items}/>
+    <Router>
+    <div className='App'>
+    <Navbarkanban/>
+    <Routes>
+      <Route path="/" element={<Login/>}/>
+      <Route path="/Signup" element={<Signup/>}/>
+    </Routes>
     </div>
+  </Router>
   );
 }
 
